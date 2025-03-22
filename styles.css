@@ -205,7 +205,7 @@ footer p {
 .services-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 15px;
+    gap: 30px; /* Espacio entre imágenes */
     justify-content: center;
     align-items: center;
 }
@@ -226,11 +226,69 @@ footer p {
 .services-gallery img {
     width: 100%;
     height: auto;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
     transition: transform 0.3s;
 }
 
+.services-gallery img::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    transition: border-color 0.3s;
+}
+
+.services-gallery img:hover::before {
+    border-color: #f7a8a8; /* Borde rosa crema */
+}
+
 .services-gallery img:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
+}
+
+.modal {
+    display: none; 
+    position: fixed; /* Posición fija */
+    z-index: 1000; /* Encima de todo */
+    padding-top: 60px; /* Espacio desde la parte superior */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Habilitar scroll si es necesario */
+    background-color: rgb(0,0,0); /* Fondo negro */
+    background-color: rgba(0,0,0,0.9); /* Fondo negro con transparencia */
+}
+
+/* Estilos para la imagen dentro del modal */
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+}
+
+/* Estilos para el botón de cerrar */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
 }
