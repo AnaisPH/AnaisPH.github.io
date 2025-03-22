@@ -8,7 +8,7 @@ body {
 }
 
 .appbar {
-    background: linear-gradient(80deg, #f7a8a8, #f8c0c0); /* Rosa crema más fuerte */
+    background: linear-gradient(80deg, #f7a8a8, #f8c0c0);
     color: #fff;
     padding: 0.5rem 0;
     text-align: center;
@@ -196,10 +196,10 @@ footer p {
 }
 
 .services-list li img {
-    max-width: 30px; /* Ajusta el ancho máximo de las imágenes */
-    height: auto; /* Mantiene la proporción original */
-    margin-right: 10px; /* Espacio entre la imagen y el texto */
-    vertical-align: middle; /* Alinea verticalmente con el texto */
+    max-width: 30px; 
+    height: auto; 
+    margin-right: 10px; 
+    vertical-align: middle; 
 }
 
 .services-gallery {
@@ -211,16 +211,16 @@ footer p {
 }
 
 #about .img {
-    text-align: center; /* Centrar la imagen en el contenedor */
-    margin: 1px 0; /* Espacio arriba y abajo de la imagen */
+    text-align: center; 
+    margin: 1px 0; 
 }
 
 #about .img img {
-    max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
-    height: auto; /* Mantiene la proporción de la imagen */
-    width: 300px; /* Ancho fijo para la imagen, ajustable según sea necesario */
-    border-radius: 50px; /* Bordes redondeados para un estilo más suave */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    max-width: 100%; 
+    height: auto; 
+    width: 300px; 
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .services-gallery img {
