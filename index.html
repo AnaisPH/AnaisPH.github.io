@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
 <link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Epilogue:wght@400;500;700;900&amp;family=Noto+Sans:wght@400;500;700;900" onload="this.rel='stylesheet'" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
@@ -62,15 +63,16 @@
 <section class="relative flex min-h-[60vh] items-center justify-center bg-cover bg-center py-20 text-center transition-all duration-700"
   style='background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAOcjoH0m-fGIhqWhZLK2mXUHv8mNMev-pvvo7xGhsBY5Nuf9CS7AAqlX3j20_0C3OVhdjmsLtm-IdwnJOholrsPgdLNQ-Wo1UOPSGKzIKz7c36SsjXbl1m6g3h29uLrnwjoEmFIFWbpZpGwTvHq90uKNednJqTDyisw-psEczhJrWv8uzmd6rHB9vNLmDqk6l75TjzTsU7WBwD35oQD2sYJytf_I_lu1BrA4yZIVjLcRFQM2Eahb5eQ-SsDvpWt3fPA6v0HakLBIk");'>
   <div class="container mx-auto flex flex-col items-center gap-6 px-4 animate-fadeIn">
-    <h1 class="text-4xl font-black tracking-tighter text-white sm:text-5xl md:text-6xl">Bienvenido a Consultorio Anais PH</h1>
-    <p class="max-w-2xl text-lg text-white/90">Descubre un mundo de belleza y bienestar. Tratamientos personalizados para ti.</p>
+    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter text-white">Bienvenido a Consultorio Anais PH</h1>
+    <p class="max-w-full sm:max-w-2xl text-lg text-white/90">Descubre un mundo de belleza y bienestar. Tratamientos personalizados para ti.</p>
     <button class="rounded-full bg-primary px-8 py-3 text-base font-bold text-white shadow-lg transition-transform hover:scale-110">Explorar Servicios</button>
   </div>
 </section>
 
 <!-- ======= CARRUSEL DE SERVICIOS ======= -->
 <section id="servicios" class="py-16 sm:py-24">
-  <div class="container mx-auto px-4">
+<div class="container mx-auto px-4 sm:px-6 md:px-10">
+
     <div class="mb-12 text-center">
       <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Nuestros Servicios</h2>
       <p class="mt-4 text-lg text-[#211119]/70 dark:text-background-light/70">Cuidado experto para una piel radiante.</p>
@@ -78,7 +80,8 @@
 
     <!-- Carrusel -->
     <div class="relative overflow-hidden">
-      <div id="carouselServicios" class="flex gap-8 transition-transform duration-700 ease-in-out">
+        <div id="carouselServicios" class="flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory touch-pan-x">
+
         <!-- Tarjetas -->
         <div class="min-w-[300px] flex flex-col items-center gap-4 text-center flex-shrink-0 hover:scale-105 transition-transform duration-300">
           <div class="h-48 w-full rounded-lg bg-cover bg-center" style='background-image: url("img/Serv1.jpeg");'></div>
@@ -180,7 +183,7 @@
     </div>
 
     <div class="relative overflow-hidden">
-      <div id="carouselMedic" class="flex gap-8 transition-transform duration-700 ease-in-out">
+      <div id="carouselMedic"  class="flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory touch-pan-x">
         <!-- Tarjetas de medicamentos -->
         <div class="min-w-[250px] flex flex-col gap-4 rounded-lg bg-background-light p-4 shadow-md hover:scale-105 transition-transform duration-300 dark:bg-background-dark">
           <div class="aspect-square w-full rounded bg-cover bg-center" style='background-image:url("img/medicamento1.jpeg")'></div>
@@ -406,30 +409,27 @@ document.querySelectorAll('.nav-link').forEach(link => {
   });
 });
 
-// Carruseles genéricos
-function initCarousel(containerId, prevId, nextId) {
+function initCarouselScroll(containerId, prevId, nextId) {
   const track = document.getElementById(containerId);
   const prev = document.getElementById(prevId);
   const next = document.getElementById(nextId);
-  let position = 0;
+
+  const itemWidth = track.children[0].offsetWidth + parseInt(getComputedStyle(track).gap);
 
   next.addEventListener('click', () => {
-    if (position > -(track.scrollWidth - track.clientWidth)) {
-      position -= 300;
-      track.style.transform = `translateX(${position}px)`;
-    }
+    track.scrollBy({ left: itemWidth, behavior: 'smooth' });
   });
 
   prev.addEventListener('click', () => {
-    if (position < 0) {
-      position += 300;
-      track.style.transform = `translateX(${position}px)`;
-    }
+    track.scrollBy({ left: -itemWidth, behavior: 'smooth' });
   });
 }
 
-initCarousel("carouselServicios", "prevServ", "nextServ");
-initCarousel("carouselMedic", "prevMed", "nextMed");
+initCarouselScroll("carouselServicios", "prevServ", "nextServ");
+initCarouselScroll("carouselMedic", "prevMed", "nextMed");
+
+
+
 </script>
 
 <style>
@@ -440,5 +440,16 @@ initCarousel("carouselMedic", "prevMed", "nextMed");
 .animate-fadeIn {
   animation: fadeIn 1.2s ease-out;
 }
+
+@media (max-width: 768px) {
+  #prevServ, #nextServ,
+  #prevMed, #nextMed {
+    display: none;
+  }
+}
+
 </style>
+
+
+
 </body></html>
