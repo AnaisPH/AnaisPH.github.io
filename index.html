@@ -1,504 +1,842 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
-<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Epilogue:wght@400;500;700;900&amp;family=Noto+Sans:wght@400;500;700;900" onload="this.rel='stylesheet'" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<title>Consultorio Anais Ph</title>
-<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
-    <link rel="shortcut icon" href="logos.png">
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              primary: "#f7bad9",
-              "background-light": "#f8f6f7",
-              "background-dark": "#211119",
+<html lang="es" class="scroll-smooth">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consultorio Anais PH | Clínica Estética Premium</title>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="logos.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    rel="stylesheet" />
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              light: "#F6C8D8",
+              DEFAULT: "#E9AFC6",
+              dark: "#D48BA8"
             },
-            fontFamily: {
-              display: ["Epilogue"],
-            },
-            borderRadius: {
-              DEFAULT: "1rem",
-              lg: "2rem",
-              xl: "3rem",
-              full: "9999px"
-            },
+            base: {
+              light: "#F9FAFB",
+              dark: "#1A1A1A"
+            }
           },
-        },
-      };
-    </script>
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+          },
+          boxShadow: {
+            'premium': '0 20px 40px -15px rgba(0,0,0,0.05)',
+            'premium-hover': '0 30px 60px -15px rgba(233,175,198,0.2)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Styles & Animations */
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .nav-transparent {
+      background: transparent;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .text-shadow {
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Swiper Overrides */
+    .swiper-pagination-bullet {
+      background: #fff;
+      opacity: 0.5;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: #E9AFC6;
+      opacity: 1;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: #fff;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #F9FAFB;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #E9AFC6;
+      border-radius: 4px;
+    }
+  </style>
 </head>
-<body class="bg-background-light dark:bg-background-dark font-display text-[#211119] dark:text-background-light scroll-smooth">
 
-<!-- ======= NAVBAR ======= -->
-<header class="sticky top-0 z-20 flex items-center justify-between whitespace-nowrap border-b border-primary/20 bg-background-light/80 px-4 py-3 backdrop-blur-md dark:bg-background-dark/80 md:px-10 transition-all duration-500">
-  <div class="flex items-center gap-4">
-    <div class="text-primary">
-      <img src="logo.png" alt="Descripción" class="h-6 w-6 transition-transform duration-300 hover:scale-110">
-    </div>
-    <h2 class="text-lg font-bold tracking-tight">Consultorio Anais PH</h2>
-  </div>
-<nav
-  id="mobileMenu"
-  class="hidden absolute top-full left-0 w-full flex-col items-center gap-4 border-t border-primary/20 bg-background-light py-6 text-center shadow-md dark:bg-background-dark
-         md:relative md:flex md:flex-row md:gap-6 md:border-0 md:bg-transparent md:py-0 md:shadow-none md:top-auto md:left-auto md:w-auto"
->
-      <a class="nav-link text-sm font-medium transition-colors duration-300 hover:text-primary" href="#medicamentos">Medicamentos</a>
-    <a class="nav-link text-sm font-medium transition-colors duration-300 hover:text-primary" href="#servicios">Servicios</a>
-    <a class="nav-link text-sm font-medium transition-colors duration-300 hover:text-primary" href="#Contactos">Contactos</a>
-  </nav>
-  <div class="flex items-center gap-4">
-    <button class="flex items-center justify-center rounded-full bg-primary px-4 py-2 text-sm font-bold text-white shadow-md transition-transform hover:scale-105">
-      <span class="material-symbols-outlined mr-2 text-base">shopping_bag</span>
-      <span>Shopping</span>
-    </button>
-    <button id="menuToggle" class="md:hidden">
-      <span class="material-symbols-outlined text-2xl">menu</span>
-    </button>
-  </div>
-</header>
+<body class="bg-base-light text-base-dark font-sans antialiased selection:bg-primary selection:text-white">
 
-<!-- ======= HERO ======= -->
-<section class="relative flex min-h-[60vh] items-center justify-center bg-cover bg-center py-20 text-center transition-all duration-700"
-  style='background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAOcjoH0m-fGIhqWhZLK2mXUHv8mNMev-pvvo7xGhsBY5Nuf9CS7AAqlX3j20_0C3OVhdjmsLtm-IdwnJOholrsPgdLNQ-Wo1UOPSGKzIKz7c36SsjXbl1m6g3h29uLrnwjoEmFIFWbpZpGwTvHq90uKNednJqTDyisw-psEczhJrWv8uzmd6rHB9vNLmDqk6l75TjzTsU7WBwD35oQD2sYJytf_I_lu1BrA4yZIVjLcRFQM2Eahb5eQ-SsDvpWt3fPA6v0HakLBIk");'>
-  <div class="container mx-auto flex flex-col items-center gap-6 px-4 animate-fadeIn">
-    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter text-white">Bienvenido a Consultorio Anais PH</h1>
-    <p class="max-w-full sm:max-w-2xl text-lg text-white/90">Descubre un mundo de belleza y bienestar. Tratamientos personalizados para ti.</p>
-    <a href="#servicios">
-    <button class="rounded-full bg-primary px-8 py-3 text-base font-bold text-white shadow-lg transition-transform hover:scale-110">Explorar Servicios</button>
-  </a>
-  </div>
-</section>
+  <!-- ======= NAVBAR ======= -->
+  <header id="navbar" class="fixed top-0 w-full z-50 transition-all duration-500 nav-transparent py-4">
+    <div class="container mx-auto px-4 md:px-8 flex justify-between items-center">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <img src="logo.png" alt="Consultorio Anais PH Logo"
+          class="h-10 w-10 transition-transform duration-500 group-hover:rotate-[360deg]">
+        <h1 id="nav-title"
+          class="font-serif text-xl md:text-2xl font-semibold tracking-wide text-white transition-colors duration-300">
+          Anais PH</h1>
+      </a>
 
-<!-- ======= CARRUSEL DE SERVICIOS ======= -->
-<section id="servicios" class="py-16 sm:py-24">
-<div class="container mx-auto px-4 sm:px-6 md:px-10">
+      <!-- Desktop Menu -->
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="#servicios" id="nav-link-1"
+          class="text-white hover:text-primary transition-colors text-sm font-medium tracking-wider uppercase">Servicios</a>
+        <a href="medicamentos.html" id="nav-link-2"
+          class="text-white hover:text-primary transition-colors text-sm font-medium tracking-wider uppercase">Catálogo</a>
+        <a href="#noticias" id="nav-link-3"
+          class="text-white hover:text-primary transition-colors text-sm font-medium tracking-wider uppercase">Noticias</a>
+        <a href="#contacto"
+          class="bg-primary hover:bg-primary-dark text-white px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-primary/50 transform hover:-translate-y-0.5">
+          Agendar Cita
+        </a>
+      </nav>
 
-    <div class="mb-12 text-center">
-      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Nuestros Servicios</h2>
-      <p class="mt-4 text-lg text-[#211119]/70 dark:text-background-light/70">Cuidado experto para una piel radiante.</p>
-    </div>
-
-    <!-- Carrusel -->
-    <div class="relative overflow-hidden">
-        <div id="carouselServicios" class="flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory touch-pan-x">
-
-        <!-- Tarjetas -->
-        <div class="min-w-[300px] flex flex-col items-center gap-4 text-center flex-shrink-0 hover:scale-105 transition-transform duration-300">
-          <div class="h-48 w-full rounded-lg bg-cover bg-center" style='background-image: url("img/Serv1.jpeg");'></div>
-          <h3 class="text-xl font-bold">Barras de Access</h3>
-        </div>
-
-        <div class="min-w-[300px] flex flex-col items-center gap-4 text-center flex-shrink-0 hover:scale-105 transition-transform duration-300">
-          <div class="h-48 w-full rounded-lg bg-cover bg-center" style='background-image:url("img/Serv2.jpeg")'></div>
-          <h3 class="text-xl font-bold">Plasma Pen</h3>
-        </div>
-
-        <div class="min-w-[300px] flex flex-col items-center gap-4 text-center flex-shrink-0 hover:scale-105 transition-transform duration-300">
-          <div class="h-48 w-full rounded-lg bg-cover bg-center" style='background-image:url("img/Serv3.jpeg")'></div>
-          <h3 class="text-xl font-bold">Radio-Frecuencia Corporal</h3>
-        </div>
-                <div class="min-w-[300px] flex flex-col items-center gap-4 text-center flex-shrink-0 hover:scale-105 transition-transform duration-300">
-          <div class="h-48 w-full rounded-lg bg-cover bg-center" style='background-image: url("img/Serv4.jpeg");'></div>
-          <h3 class="text-xl font-bold">Microdermoabrasión Facial</h3>
-        </div>
-
-        <div class="min-w-[300px] flex flex-col items-center gap-4 text-center flex-shrink-0 hover:scale-105 transition-transform duration-300">
-          <div class="h-48 w-full rounded-lg bg-cover bg-center" style='background-image:url("img/Serv5.jpeg")'></div>
-          <h3 class="text-xl font-bold">Fibroblast</h3>
-        </div>
-
-        <div class="min-w-[300px] flex flex-col items-center gap-4 text-center flex-shrink-0 hover:scale-105 transition-transform duration-300">
-          <div class="h-48 w-full rounded-lg bg-cover bg-center" style='background-image:url("img/Serv6.jpeg")'></div>
-          <h3 class="text-xl font-bold">Ondas Rusas</h3>
-        </div>
-                <div class="min-w-[300px] flex flex-col items-center gap-4 text-center flex-shrink-0 hover:scale-105 transition-transform duration-300">
-          <div class="h-48 w-full rounded-lg bg-cover bg-center" style='background-image: url("img/Serv7.jpeg");'></div>
-          <h3 class="text-xl font-bold">Faciales</h3>
-        </div>
-
-        <div class="min-w-[300px] flex flex-col items-center gap-4 text-center flex-shrink-0 hover:scale-105 transition-transform duration-300">
-          <div class="h-48 w-full rounded-lg bg-cover bg-center" style='background-image:url("img/Serv8.jpeg")'></div>
-          <h3 class="text-xl font-bold">Ozonoterapia</h3>
-        </div>
-
-        <div class="min-w-[300px] flex flex-col items-center gap-4 text-center flex-shrink-0 hover:scale-105 transition-transform duration-300">
-          <div class="h-48 w-full rounded-lg bg-cover bg-center" style='background-image:url("img/Serv9.jpeg")'></div>
-          <h3 class="text-xl font-bold">Aplicación de Toxina Botulinica</h3>
-        </div>
-                <div class="min-w-[300px] flex flex-col items-center gap-4 text-center flex-shrink-0 hover:scale-105 transition-transform duration-300">
-          <div class="h-48 w-full rounded-lg bg-cover bg-center" style='background-image: url("img/Serv10.jpeg");'></div>
-          <h3 class="text-xl font-bold">Hifu</h3>
-        </div>
-
-        <div class="min-w-[300px] flex flex-col items-center gap-4 text-center flex-shrink-0 hover:scale-105 transition-transform duration-300">
-          <div class="h-48 w-full rounded-lg bg-cover bg-center" style='background-image:url("img/Serv11.jpeg")'></div>
-          <h3 class="text-xl font-bold">Desarrolla Músculo y Quema Grasa</h3>
-        </div>
-
-        <div class="min-w-[300px] flex flex-col items-center gap-4 text-center flex-shrink-0 hover:scale-105 transition-transform duration-300">
-          <div class="h-48 w-full rounded-lg bg-cover bg-center" style='background-image:url("img/Serv12.jpeg")'></div>
-          <h3 class="text-xl font-bold">Ondas Rusas</h3>
-        </div>
-                <div class="min-w-[300px] flex flex-col items-center gap-4 text-center flex-shrink-0 hover:scale-105 transition-transform duration-300">
-          <div class="h-48 w-full rounded-lg bg-cover bg-center" style='background-image: url("img/Serv13.jpeg");'></div>
-          <h3 class="text-xl font-bold">Arrugas</h3>
-        </div>
-
-        <div class="min-w-[300px] flex flex-col items-center gap-4 text-center flex-shrink-0 hover:scale-105 transition-transform duration-300">
-          <div class="h-48 w-full rounded-lg bg-cover bg-center" style='background-image:url("img/Serv14jpg.jpg")'></div>
-          <h3 class="text-xl font-bold">Radio-Frecuencia</h3>
-        </div>
-
-        <div class="min-w-[300px] flex flex-col items-center gap-4 text-center flex-shrink-0 hover:scale-105 transition-transform duration-300">
-          <div class="h-48 w-full rounded-lg bg-cover bg-center" style='background-image:url("img/Serv15.jpeg")'></div>
-          <h3 class="text-xl font-bold">Terapia Smartron</h3>
-        </div>
-
-                <div class="min-w-[300px] flex flex-col items-center gap-4 text-center flex-shrink-0 hover:scale-105 transition-transform duration-300">
-          <div class="h-48 w-full rounded-lg bg-cover bg-center" style='background-image:url("img/Serv16.jpeg")'></div>
-        </div>
-        
-
-
-        <!-- Aquí puedes agregar más servicios duplicando este bloque -->
-      </div>
-
-      <!-- Botones del carrusel -->
-      <button id="prevServ" class="absolute left-0 top-1/2 -translate-y-1/2 bg-primary/80 text-white rounded-full p-2 shadow-md hover:bg-primary transition">
-        <span class="material-symbols-outlined">chevron_left</span>
-      </button>
-      <button id="nextServ" class="absolute right-0 top-1/2 -translate-y-1/2 bg-primary/80 text-white rounded-full p-2 shadow-md hover:bg-primary transition">
-        <span class="material-symbols-outlined">chevron_right</span>
+      <!-- Mobile Menu Button -->
+      <button id="mobileMenuBtn" class="md:hidden text-white transition-colors duration-300">
+        <span class="material-symbols-outlined text-3xl">menu</span>
       </button>
     </div>
-  </div>
-</section>
 
-<!-- ======= CARRUSEL DE MEDICAMENTOS ======= -->
-<section id="medicamentos" class="bg-primary/10 py-16 dark:bg-primary/5 sm:py-24">
-  <div class="container mx-auto px-4">
-    <div class="mb-12 text-center">
-      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Medicamentos Esenciales</h2>
-      <p class="mt-4 text-lg text-[#211119]/70 dark:text-background-light/70">Productos de alta calidad para tu piel.</p>
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenu"
+      class="absolute top-full left-0 w-full bg-white shadow-xl flex-col items-center py-6 gap-6 hidden origin-top animate-fade-in-down border-t border-gray-100">
+      <a href="#servicios"
+        class="text-base-dark hover:text-primary text-sm font-medium uppercase tracking-widest">Servicios</a>
+      <a href="medicamentos.html"
+        class="text-base-dark hover:text-primary text-sm font-medium uppercase tracking-widest">Catálogo</a>
+      <a href="#noticias"
+        class="text-base-dark hover:text-primary text-sm font-medium uppercase tracking-widest">Noticias</a>
+      <a href="#contacto" class="bg-primary text-white px-8 py-3 rounded-full text-sm font-bold mt-2">Agendar Cita</a>
     </div>
+  </header>
 
-    <div class="relative overflow-hidden">
-      <div id="carouselMedic"  class="flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory touch-pan-x">
-        <!-- Tarjetas de medicamentos -->
-        <div class="min-w-[250px] flex flex-col gap-4 rounded-lg bg-background-light p-4 shadow-md hover:scale-105 transition-transform duration-300 dark:bg-background-dark">
-          <div class="aspect-square w-full rounded bg-cover bg-center" style='background-image:url("img/medicamento1.jpeg")'></div>
-          <h3 class="font-bold">Carzilasa</h3>
-        </div>
+  <!-- ======= HERO SWIPER ======= -->
+  <section class="relative h-screen min-h-[600px] w-full">
+    <div class="swiper heroSwiper h-full w-full">
+      <div class="swiper-wrapper">
 
-        <div class="min-w-[250px] flex flex-col gap-4 rounded-lg bg-background-light p-4 shadow-md hover:scale-105 transition-transform duration-300 dark:bg-background-dark">
-          <div class="aspect-square w-full rounded bg-cover bg-center" style='background-image:url("img/Medicamento2.jpeg")'></div>
-          <h3 class="font-bold">Placenta en Cápsulas</h3>
-        </div>
-
-                <div class="min-w-[250px] flex flex-col gap-4 rounded-lg bg-background-light p-4 shadow-md hover:scale-105 transition-transform duration-300 dark:bg-background-dark">
-          <div class="aspect-square w-full rounded bg-cover bg-center" style='background-image:url("img/Medicamento3.jpeg")'></div>
-          <h3 class="font-bold">Placenta en Crema</h3>
-        </div>
-
-        <div class="min-w-[250px] flex flex-col gap-4 rounded-lg bg-background-light p-4 shadow-md hover:scale-105 transition-transform duration-300 dark:bg-background-dark">
-          <div class="aspect-square w-full rounded bg-cover bg-center" style='background-image:url("img/Medicamento4.jpeg")'></div>
-          <h3 class="font-bold">Placenta Líquida</h3>
-        </div>
-                <div class="min-w-[250px] flex flex-col gap-4 rounded-lg bg-background-light p-4 shadow-md hover:scale-105 transition-transform duration-300 dark:bg-background-dark">
-          <div class="aspect-square w-full rounded bg-cover bg-center" style='background-image:url("img/Medicamento5.jpeg")'></div>
-          <h3 class="font-bold">Celulas Madre</h3>
-        </div>
-
-        <div class="min-w-[250px] flex flex-col gap-4 rounded-lg bg-background-light p-4 shadow-md hover:scale-105 transition-transform duration-300 dark:bg-background-dark">
-          <div class="aspect-square w-full rounded bg-cover bg-center" style='background-image:url("img/medicamento6.jpeg")'></div>
-          <h3 class="font-bold">Celulas Troncales</h3>
-        </div>
-                <div class="min-w-[250px] flex flex-col gap-4 rounded-lg bg-background-light p-4 shadow-md hover:scale-105 transition-transform duration-300 dark:bg-background-dark">
-          <div class="aspect-square w-full rounded bg-cover bg-center" style='background-image:url("img/medicamento7.jpeg")'></div>
-          <h3 class="font-bold">Fracción Vascular Estromal</h3>
-        </div>
-
-        <div class="min-w-[250px] flex flex-col gap-4 rounded-lg bg-background-light p-4 shadow-md hover:scale-105 transition-transform duration-300 dark:bg-background-dark">
-          <div class="aspect-square w-full rounded bg-cover bg-center" style='background-image:url("img/medicamento8.jpeg")'></div>
-          <h3 class="font-bold">Generación Cellular</h3>
-        </div>
-                <div class="min-w-[250px] flex flex-col gap-4 rounded-lg bg-background-light p-4 shadow-md hover:scale-105 transition-transform duration-300 dark:bg-background-dark">
-          <div class="aspect-square w-full rounded bg-cover bg-center" style='background-image:url("img/medicamento9.jpeg")'></div>
-          <h3 class="font-bold">EmbrioStem 6G</h3>
-        </div>
-
-        <div class="min-w-[250px] flex flex-col gap-4 rounded-lg bg-background-light p-4 shadow-md hover:scale-105 transition-transform duration-300 dark:bg-background-dark">
-          <div class="aspect-square w-full rounded bg-cover bg-center" style='background-image:url("img/medicamento10.jpeg")'></div>
-          <h3 class="font-bold">Lifting</h3>
+        <!-- Slide 1: Promoción -->
+        <div class="swiper-slide relative">
+          <div class="absolute inset-0 bg-black/40 z-10"></div>
+          <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=2070&auto=format&fit=crop"
+            class="absolute inset-0 w-full h-full object-cover" alt="Tratamiento Facial">
+          <div class="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4">
+            <span
+              class="text-primary-light font-medium tracking-[0.2em] uppercase mb-4 text-shadow animate-fade-up">Promoción
+              del Mes</span>
+            <h2 class="font-serif text-5xl md:text-7xl text-white font-bold mb-6 max-w-4xl text-shadow leading-tight">
+              Limpieza Facial Profunda</h2>
+            <p class="text-white/90 text-lg md:text-xl mb-10 max-w-2xl font-light text-shadow">Renueva tu piel y
+              devuélvele su luminosidad natural con nuestro tratamiento estrella.</p>
+            <a href="#contacto"
+              class="bg-white/10 backdrop-blur-md border border-white/50 text-white hover:bg-white hover:text-base-dark px-8 py-4 rounded-full text-sm font-bold tracking-wider uppercase transition-all duration-500">Reservar
+              Ahora</a>
           </div>
-                <div class="min-w-[250px] flex flex-col gap-4 rounded-lg bg-background-light p-4 shadow-md hover:scale-105 transition-transform duration-300 dark:bg-background-dark">
-          <div class="aspect-square w-full rounded bg-cover bg-center" style='background-image:url("img/medicamento11.jpeg")'></div>
-          <h3 class="font-bold">EmbrioStem 6G</h3>
         </div>
 
-        <div class="min-w-[250px] flex flex-col gap-4 rounded-lg bg-background-light p-4 shadow-md hover:scale-105 transition-transform duration-300 dark:bg-background-dark">
-          <div class="aspect-square w-full rounded bg-cover bg-center" style='background-image:url("img/medicamento12.jpeg")'></div>
-          <h3 class="font-bold">Human Ultracel</h3>
-        </div>
-                <div class="min-w-[250px] flex flex-col gap-4 rounded-lg bg-background-light p-4 shadow-md hover:scale-105 transition-transform duration-300 dark:bg-background-dark">
-          <div class="aspect-square w-full rounded bg-cover bg-center" style='background-image:url("img/medicamento13.jpeg")'></div>
-          <h3 class="font-bold">Hidratant Tonico Facial</h3>
-        </div>
-
-        <div class="min-w-[250px] flex flex-col gap-4 rounded-lg bg-background-light p-4 shadow-md hover:scale-105 transition-transform duration-300 dark:bg-background-dark">
-          <div class="aspect-square w-full rounded bg-cover bg-center" style='background-image:url("img/medicamento14.jpeg")'></div>
-          <h3 class="font-bold">Soilare Filtro Solar Facial</h3>
-        </div>
-                <div class="min-w-[250px] flex flex-col gap-4 rounded-lg bg-background-light p-4 shadow-md hover:scale-105 transition-transform duration-300 dark:bg-background-dark">
-          <div class="aspect-square w-full rounded bg-cover bg-center" style='background-image:url("img/medicamento15.jpeg")'></div>
-          <h3 class="font-bold">Burn Gel</h3>
-        </div>
-
-        <div class="min-w-[250px] flex flex-col gap-4 rounded-lg bg-background-light p-4 shadow-md hover:scale-105 transition-transform duration-300 dark:bg-background-dark">
-          <div class="aspect-square w-full rounded bg-cover bg-center" style='background-image:url("img/medicamento16.jpeg")'></div>
-          <h3 class="font-bold">Soilare Filtro Solar Facial</h3>
-        </div>
-                <div class="min-w-[250px] flex flex-col gap-4 rounded-lg bg-background-light p-4 shadow-md hover:scale-105 transition-transform duration-300 dark:bg-background-dark">
-          <div class="aspect-square w-full rounded bg-cover bg-center" style='background-image:url("img/medicamento17.jpeg")'></div>
-          <h3 class="font-bold">Balsamo Labial</h3>
+        <!-- Slide 2: Nuevo Tratamiento -->
+        <div class="swiper-slide relative">
+          <div class="absolute inset-0 bg-black/40 z-10"></div>
+          <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=2070&auto=format&fit=crop"
+            class="absolute inset-0 w-full h-full object-cover" alt="Tratamiento Láser">
+          <div class="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4">
+            <span class="text-primary-light font-medium tracking-[0.2em] uppercase mb-4 text-shadow">Nuevo
+              Tratamiento</span>
+            <h2 class="font-serif text-5xl md:text-7xl text-white font-bold mb-6 max-w-4xl text-shadow leading-tight">
+              Rejuvenecimiento HIFU</h2>
+            <p class="text-white/90 text-lg md:text-xl mb-10 max-w-2xl font-light text-shadow">Lifting sin cirugía. La
+              tecnología más avanzada para tensar y reafirmar tu rostro.</p>
+            <a href="servicios.html"
+              class="bg-white/10 backdrop-blur-md border border-white/50 text-white hover:bg-white hover:text-base-dark px-8 py-4 rounded-full text-sm font-bold tracking-wider uppercase transition-all duration-500">Descubrir
+              Más</a>
+          </div>
         </div>
 
-        <div class="min-w-[250px] flex flex-col gap-4 rounded-lg bg-background-light p-4 shadow-md hover:scale-105 transition-transform duration-300 dark:bg-background-dark">
-          <div class="aspect-square w-full rounded bg-cover bg-center" style='background-image:url("img/medicamento18.jpeg")'></div>
-          <h3 class="font-bold">Growth Lashes</h3>
+        <!-- Slide 3: Producto -->
+        <div class="swiper-slide relative">
+          <div class="absolute inset-0 bg-black/40 z-10"></div>
+          <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=1974&auto=format&fit=crop"
+            class="absolute inset-0 w-full h-full object-cover" alt="Productos Premium">
+          <div class="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4">
+            <span class="text-primary-light font-medium tracking-[0.2em] uppercase mb-4 text-shadow">Cuidado en
+              Casa</span>
+            <h2 class="font-serif text-5xl md:text-7xl text-white font-bold mb-6 max-w-4xl text-shadow leading-tight">
+              Productos Premium</h2>
+            <p class="text-white/90 text-lg md:text-xl mb-10 max-w-2xl font-light text-shadow">Extiende los resultados
+              de la clínica con nuestra línea de productos dermatológicos.</p>
+            <a href="medicamentos.html"
+              class="bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-full text-sm font-bold tracking-wider uppercase transition-all duration-500 shadow-xl">Ver
+              Catálogo</a>
+          </div>
         </div>
 
-                <div class="min-w-[250px] flex flex-col gap-4 rounded-lg bg-background-light p-4 shadow-md hover:scale-105 transition-transform duration-300 dark:bg-background-dark">
-          <div class="aspect-square w-full rounded bg-cover bg-center" style='background-image:url("img/medicamento19.jpeg")'></div>
-          <h3 class="font-bold">Advance</h3>
-        </div>
-        
+      </div>
+      <!-- Pagination & Navigation -->
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next hidden md:flex"></div>
+      <div class="swiper-button-prev hidden md:flex"></div>
+    </div>
+  </section>
 
-
-        <!-- Agrega más productos duplicando este bloque -->
+  <!-- ======= NOTICIAS Y PROMOCIONES ======= -->
+  <section id="noticias" class="py-24 bg-white">
+    <div class="container mx-auto px-4 md:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h3 class="text-primary font-semibold tracking-widest uppercase text-sm mb-3">Actualidad</h3>
+        <h2 class="font-serif text-4xl md:text-5xl font-bold text-base-dark mb-6">Últimas Novedades</h2>
+        <div class="w-20 h-1 bg-primary mx-auto"></div>
       </div>
 
-      <button id="prevMed" class="absolute left-0 top-1/2 -translate-y-1/2 bg-primary/80 text-white rounded-full p-2 shadow-md hover:bg-primary transition">
-        <span class="material-symbols-outlined">chevron_left</span>
-      </button>
-      <button id="nextMed" class="absolute right-0 top-1/2 -translate-y-1/2 bg-primary/80 text-white rounded-full p-2 shadow-md hover:bg-primary transition">
-        <span class="material-symbols-outlined">chevron_right</span>
-      </button>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- News Card 1 -->
+        <div
+          class="group rounded-2xl overflow-hidden bg-base-light shadow-premium transition-all duration-500 hover:-translate-y-2 hover:shadow-premium-hover cursor-pointer">
+          <div class="h-64 overflow-hidden relative">
+            <div
+              class="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-primary z-10">
+              Promoción</div>
+            <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=2070&auto=format&fit=crop"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Botox">
+          </div>
+          <div class="p-8">
+            <p class="text-gray-500 text-sm mb-3">15 de Mayo, 2026</p>
+            <h4 class="font-serif text-xl font-bold mb-3 text-base-dark">Días de Toxina Botulínica: 20% Off</h4>
+            <p class="text-gray-600 mb-6 line-clamp-3">Aprovecha nuestros días especiales y despídete de las líneas de
+              expresión con un descuento exclusivo. Cupos limitados.</p>
+            <span
+              class="text-primary font-bold text-sm tracking-wide group-hover:text-primary-dark transition-colors flex items-center gap-1">
+              Leer más <span
+                class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- News Card 2 -->
+        <div
+          class="group rounded-2xl overflow-hidden bg-base-light shadow-premium transition-all duration-500 hover:-translate-y-2 hover:shadow-premium-hover cursor-pointer">
+          <div class="h-64 overflow-hidden relative">
+            <div
+              class="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-base-dark z-10">
+              Tips</div>
+            <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=800&auto=format&fit=crop"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Productos">
+          </div>
+          <div class="p-8">
+            <p class="text-gray-500 text-sm mb-3">10 de Mayo, 2026</p>
+            <h4 class="font-serif text-xl font-bold mb-3 text-base-dark">5 Pasos para los Productos Perfectos</h4>
+            <p class="text-gray-600 mb-6 line-clamp-3">Descubre la rutina ideal de mañana y noche para mantener tu
+              rostro hidratado, protegido y luminoso todos los días.</p>
+            <span
+              class="text-primary font-bold text-sm tracking-wide group-hover:text-primary-dark transition-colors flex items-center gap-1">
+              Leer más <span
+                class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- News Card 3 -->
+        <div
+          class="group rounded-2xl overflow-hidden bg-base-light shadow-premium transition-all duration-500 hover:-translate-y-2 hover:shadow-premium-hover cursor-pointer">
+          <div class="h-64 overflow-hidden relative">
+            <div
+              class="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-primary z-10">
+              Nuevo</div>
+            <img src="https://images.unsplash.com/photo-1519415943484-9fa1873496d4?q=80&w=2070&auto=format&fit=crop"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Laser">
+          </div>
+          <div class="p-8">
+            <p class="text-gray-500 text-sm mb-3">02 de Mayo, 2026</p>
+            <h4 class="font-serif text-xl font-bold mb-3 text-base-dark">Incorporamos Depilación Láser Diodo</h4>
+            <p class="text-gray-600 mb-6 line-clamp-3">Olvídate del vello no deseado con la tecnología más segura y
+              eficaz del mercado. Indoloro y para todo tipo de piel.</p>
+            <span
+              class="text-primary font-bold text-sm tracking-wide group-hover:text-primary-dark transition-colors flex items-center gap-1">
+              Leer más <span
+                class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+            </span>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
-<section class="py-16 sm:py-24">
-<div class="container mx-auto px-4">
-<div class="mb-12 text-center">
-<h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Lo que dicen nuestros clientes</h2>
-<p class="mt-4 text-lg text-[#211119]/70 dark:text-background-light/70">Resultados que inspiran confianza.</p>
-</div>
-<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-<div class="rounded-lg border border-primary/20 bg-background-light p-6 shadow-sm dark:border-primary/30 dark:bg-background-dark">
-<div class="mb-4 flex items-center gap-4">
-<img alt="Avatar de Sofía García" class="h-12 w-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8Y3a1_gGmVV_ttAMRCTPX_ExBsiXNNzsG2rZND_SSN9QHf8mMnYj1NJWV0uKNCPb4DLIBvSk7g_fpzZyw8hm2YMhKI0hozBZUq6TP9XkOWHbLHQr6zkjtnPEsOjORRI67E6EIlCZ3i7C2kqTDRPOONt7PixSpIfELJPsNB8qXhDyxXTqe8mJBxnU64XuBo1LDjs-pLgGsR_FK-hVQz0M8Nm7WhEUAzPFiY6KMx6Sedn0VMP_lTqaJEJsqMxeOkvBe_I-tR7uQMk8"/>
-<div>
-<p class="font-bold">Sofía García</p>
-<p class="text-sm text-[#211119]/60 dark:text-background-light/60">Hace 2 semanas</p>
-</div>
-</div>
-<div class="mb-2 flex items-center">
-<span class="material-symbols-outlined text-primary">star</span>
-<span class="material-symbols-outlined text-primary">star</span>
-<span class="material-symbols-outlined text-primary">star</span>
-<span class="material-symbols-outlined text-primary">star</span>
-<span class="material-symbols-outlined text-primary">star</span>
-</div>
-<p class="text-[#211119]/80 dark:text-background-light/80">"Mi experiencia fue excepcional. El personal es muy amable y profesional, y los tratamientos son de alta calidad. Recomiendo especialmente los tratamientos faciales."</p>
-</div>
-<div class="rounded-lg border border-primary/20 bg-background-light p-6 shadow-sm dark:border-primary/30 dark:bg-background-dark">
-<div class="mb-4 flex items-center gap-4">
-<img alt="Avatar de Isabella Rodríguez" class="h-12 w-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClT1-o3nLfFf2YEpXkJEI-sTHLs7JEbFVkcaLBKMUwU9Zw2LfN6V_T6xkTGJ1DSQqyTvznBK51NKb5VRX1NN5GtU-8aWI8pq0CThsMB4VpvkFy9yKO0OWwHDcTgi4tJaEvHnfNn57p_loLHSvQ3N7ACl8Gxw3jEEEyhHutNpXcL5wh4amtDGQ-rZ_uFOgi9zpvb4RafbRxcM6doYfzf54OPvUSTaGs057Q1IEyY0iat941YlcDe32zpTEaLR2o-tUrhUHI1MT3k4s"/>
-<div>
-<p class="font-bold">Isabella Rodríguez</p>
-<p class="text-sm text-[#211119]/60 dark:text-background-light/60">Hace 1 mes</p>
-</div>
-</div>
-<div class="mb-2 flex items-center">
-<span class="material-symbols-outlined text-primary">star</span>
-<span class="material-symbols-outlined text-primary">star</span>
-<span class="material-symbols-outlined text-primary">star</span>
-<span class="material-symbols-outlined text-primary">star</span>
-<span class="material-symbols-outlined text-primary/50">star</span>
-</div>
-<p class="text-[#211119]/80 dark:text-background-light/80">
-  "Quedé muy satisfecha con las ondas rusas. El tratamiento fue efectivo y noté resultados desde las primeras sesiones. El personal fue muy profesional y amable."
-</p></div>
-<div class="rounded-lg border border-primary/20 bg-background-light p-6 shadow-sm dark:border-primary/30 dark:bg-background-dark">
-<div class="mb-4 flex items-center gap-4">
-<img alt="Avatar de Valentina López" class="h-12 w-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZ739efTjXxuwxjJln8XzhMWJP_pSGV9auUvWYesTifEEA4vFfBkiODbjm-FBiSAsCnJEyL_weN0Lm7Bfwb6-UjDl5WMC7efjiyb91tRvKg1MQp-umY3AldbUCT25hgcEwDbpZsLFFHYXK3hKwzAiwrfQKpRMkkY8kUA1KIqLc60HNdCFPUaPjsTsMQOjgOkqYOGM30YH8Y8fR5r3Y8aIzZ_diHtQQGUUvV5i2iHvQS3-zytWDx47DHkK2CXY6TWyMSZvXXh328cI"/>
-<div>
-<p class="font-bold">Valentina López</p>
-<p class="text-sm text-[#211119]/60 dark:text-background-light/60">Hace 3 meses</p>
-</div>
-</div>
-<div class="mb-2 flex items-center">
-<span class="material-symbols-outlined text-primary">star</span>
-<span class="material-symbols-outlined text-primary">star</span>
-<span class="material-symbols-outlined text-primary">star</span>
-<span class="material-symbols-outlined text-primary">star</span>
-<span class="material-symbols-outlined text-primary">star</span>
-</div>
-<p class="text-[#211119]/80 dark:text-background-light/80">
-  "Me realicé un tratamiento de plasma pen con Anaís y quedé muy satisfecho con los resultados. Fue muy profesional, me explicó todo el proceso y el cambio en mi piel se nota desde la primera sesión."
-</p>
-</div>
-</div>
-</div>
-</section>
-<section id="Contactos" class="bg-primary/10 py-16 dark:bg-primary/5 sm:py-24">
-<div class="container mx-auto px-4">
-<div class="mb-12 text-center">
-<h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Contáctanos</h2>
-<p class="mt-4 text-lg text-[#211119]/70 dark:text-background-light/70">Estamos aquí para ayudarte. ¡Ponte en contacto con nosotros!</p>
-</div>
-<div class="grid gap-12 md:grid-cols-2">
-<div class="flex flex-col gap-8">
-<div class="h-64 w-full overflow-hidden rounded-lg shadow-md md:h-full">
-<iframe allowfullscreen="" class="h-full w-full" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.494882339784!2d-99.16766918459567!3d19.38937618690844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff374bc8b9d5%3A0x4d1b4d76b9d6e37!2sMier%20y%20Pesado%20347%2C%20c%C3%B3digo%202%2C%20Col%20del%20Valle%20Nte%2C%20Benito%20Ju%C3%A1rez%2C%2003103%20Del%20Valle%20Nte%2C%20CDMX%2C%20M%C3%A9xico!5e0!3m2!1ses-419!2sus!4v1620893934742!5m2!1ses-419!2sus" style="border:0;"></iframe>
-</div>
-<div class="flex flex-col gap-4 text-center md:text-left">
-<h3 class="text-xl font-bold">Información de Contacto</h3>
-<div class="space-y-2 text-[#211119]/80 dark:text-background-light/80">
-<p class="flex items-center justify-center gap-2 md:justify-start"><span class="material-symbols-outlined text-primary">call</span>(+52) 55-45-35-71-50</p>
-<p class="flex items-center justify-center gap-2 md:justify-start"><span class="material-symbols-outlined text-primary">phone_iphone</span> (+52) 55-45-35-71-50</p>
-<p class="flex items-center justify-center gap-2 md:justify-start"><span class="material-symbols-outlined text-primary">mail</span> anaisph7@gmail.com</p>
-</div>
-</div>
-</div>
-<div class="rounded-lg border border-primary/20 bg-background-light p-8 shadow-lg dark:border-primary/30 dark:bg-background-dark">
-<form id="contactForm" class="space-y-6">
-<div>
-<label class="mb-2 block text-sm font-medium" for="name">Nombre</label>
-<input class="w-full rounded-md border-primary/30 bg-white px-3 py-2 text-[#211119] focus:border-primary focus:ring-primary/50 dark:border-primary/50 dark:bg-background-dark/50 dark:text-background-light" id="name" placeholder="Tu Nombre" type="text"/>
-</div>
-<div>
-<label class="mb-2 block text-sm font-medium" for="date">Fecha</label>
-<input
-  class="w-full rounded-md border-primary/30 bg-white px-3 py-2 text-[#211119] focus:border-primary focus:ring-primary/50 dark:border-primary/50 dark:bg-background-dark/50 dark:text-background-light"
-  id="date"
-  type="datetime-local"
-  placeholder="Selecciona fecha y hora"
-/>
-</div>
-<div>
-<label class="mb-2 block text-sm font-medium" for="message">Servicio</label>
-<textarea class="w-full rounded-md border-primary/30 bg-white px-3 py-2 text-[#211119] focus:border-primary focus:ring-primary/50 dark:border-primary/50 dark:bg-background-dark/50 dark:text-background-light" id="message" placeholder="Escribe que servicio deseas..." rows="4"></textarea>
-</div>
-<button class="w-full rounded-full bg-primary px-6 py-3 text-base font-bold text-white shadow-md transition-transform hover:scale-105" type="submit">Enviar Mensaje</button>
-</form>
-</div>
-</div>
-</div>
-</section>
-</main>
-<footer class="border-t border-primary/20 bg-background-light py-8 dark:border-primary/30 dark:bg-background-dark">
-<div class="container mx-auto px-4 text-center text-sm text-[#211119]/70 dark:text-background-light/70">
-<p>© 2025 Consultorio Anais PH. Todos los derechos reservados.</p>
-<div class="mt-4 flex justify-center gap-4">
-<a class="hover:text-primary" href="#">Facebook</a>
-<a class="hover:text-primary" href="#">Instagram</a>
-</div>
-</div>
-</footer>
-</div>
-</div>
-<script>
-// Scroll suave (ya con Tailwind scroll-smooth)
-document.querySelectorAll('.nav-link').forEach(link => {
-  link.addEventListener('click', e => {
-    e.preventDefault();
-    document.querySelector(link.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-  });
-});
+  </section>
 
-function initCarouselScroll(containerId, prevId, nextId) {
-  const track = document.getElementById(containerId);
-  const prev = document.getElementById(prevId);
-  const next = document.getElementById(nextId);
+  <!-- ======= SERVICIOS ======= -->
+  <section id="servicios" class="py-24 bg-base-light relative overflow-hidden">
+    <!-- Decoración de fondo -->
+    <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-primary/10 rounded-full blur-3xl"></div>
 
-  const itemWidth = track.children[0].offsetWidth + parseInt(getComputedStyle(track).gap);
+    <div class="container mx-auto px-4 md:px-8 relative z-10">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+        <div class="max-w-2xl">
+          <h3 class="text-primary font-semibold tracking-widest uppercase text-sm mb-3">Expertise Médico</h3>
+          <h2 class="font-serif text-4xl md:text-5xl font-bold text-base-dark mb-4">Servicios</h2>
+          <p class="text-gray-600 text-lg">Ofrecemos soluciones personalizadas para realzar tu belleza natural con la
+            más alta tecnología y profesionalismo.</p>
+        </div>
+        <a href="servicios.html"
+          class="hidden md:flex items-center gap-2 border-b-2 border-primary pb-1 font-bold text-base-dark hover:text-primary transition-colors">
+          Ver todos los servicios <span class="material-symbols-outlined text-lg">arrow_forward</span>
+        </a>
+      </div>
 
-  next.addEventListener('click', () => {
-    track.scrollBy({ left: itemWidth, behavior: 'smooth' });
-  });
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Servicio 1 -->
+        <a href="servicios.html"
+          class="service-card group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-premium-hover border border-gray-100 transition-all duration-300">
+          <div class="h-56 overflow-hidden relative">
+            <img src="img/Serv2.jpeg"
+              onerror="this.src='https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=800&auto=format&fit=crop'"
+              class="w-full h-full object-cover" alt="Plasma Pen">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+              <span class="text-white font-medium flex items-center gap-2">Saber más <span
+                  class="material-symbols-outlined text-sm">east</span></span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-4">
+              <span class="material-symbols-outlined">spa</span>
+            </div>
+            <h4 class="font-serif text-xl font-bold text-base-dark mb-2">Plasma Pen</h4>
+            <p class="text-gray-600 text-sm line-clamp-2">Rejuvenecimiento facial sin cirugía. Estimula la producción de
+              colágeno natural.</p>
+          </div>
+        </a>
 
-  prev.addEventListener('click', () => {
-    track.scrollBy({ left: -itemWidth, behavior: 'smooth' });
-  });
-}
+        <!-- Servicio 2 -->
+        <a href="servicios.html"
+          class="service-card group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-premium-hover border border-gray-100 transition-all duration-300">
+          <div class="h-56 overflow-hidden relative">
+            <img src="img/Serv10.jpeg"
+              onerror="this.src='https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=800&auto=format&fit=crop'"
+              class="w-full h-full object-cover" alt="HIFU">
+          </div>
+          <div class="p-6">
+            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-4">
+              <span class="material-symbols-outlined">sound_detection_dog_barking</span>
+            </div>
+            <h4 class="font-serif text-xl font-bold text-base-dark mb-2">HIFU 4D</h4>
+            <p class="text-gray-600 text-sm line-clamp-2">Ultrasonido focalizado para un lifting facial profundo y
+              definición de contornos.</p>
+          </div>
+        </a>
 
-initCarouselScroll("carouselServicios", "prevServ", "nextServ");
-initCarouselScroll("carouselMedic", "prevMed", "nextMed");
+        <!-- Servicio 3 -->
+        <a href="servicios.html"
+          class="service-card group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-premium-hover border border-gray-100 transition-all duration-300">
+          <div class="h-56 overflow-hidden relative">
+            <img src="img/Serv9.jpeg"
+              onerror="this.src='https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=800&auto=format&fit=crop'"
+              class="w-full h-full object-cover" alt="Toxina">
+          </div>
+          <div class="p-6">
+            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-4">
+              <span class="material-symbols-outlined">vaccines</span>
+            </div>
+            <h4 class="font-serif text-xl font-bold text-base-dark mb-2">Toxina Botulínica</h4>
+            <p class="text-gray-600 text-sm line-clamp-2">Atenúa líneas de expresión de manera natural y previene nuevas
+              arrugas.</p>
+          </div>
+        </a>
 
+        <!-- Servicio 4 -->
+        <a href="servicios.html"
+          class="service-card group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-premium-hover border border-gray-100 transition-all duration-300">
+          <div class="h-56 overflow-hidden relative">
+            <img src="img/Serv4.jpeg"
+              onerror="this.src='https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=800&auto=format&fit=crop'"
+              class="w-full h-full object-cover" alt="Microdermoabrasión">
+          </div>
+          <div class="p-6">
+            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-4">
+              <span class="material-symbols-outlined">face_retouching_natural</span>
+            </div>
+            <h4 class="font-serif text-xl font-bold text-base-dark mb-2">Microdermoabrasión</h4>
+            <p class="text-gray-600 text-sm line-clamp-2">Exfoliación profunda para una piel luminosa, suave y libre de
+              impurezas.</p>
+          </div>
+        </a>
+      </div>
 
+      <div class="mt-10 text-center md:hidden">
+        <a href="servicios.html"
+          class="inline-flex items-center justify-center px-8 py-3 bg-white border border-gray-200 rounded-full text-base-dark font-bold shadow-sm hover:bg-gray-50">
+          Ver todos los servicios
+        </a>
+      </div>
+    </div>
+  </section>
 
-</script>
+  <!-- ======= POR QUÉ ELEGIRNOS ======= -->
+  <section class="py-24 bg-white">
+    <div class="container mx-auto px-4 md:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h3 class="text-primary font-semibold tracking-widest uppercase text-sm mb-3">Filosofía</h3>
+        <h2 class="font-serif text-4xl md:text-5xl font-bold text-base-dark mb-6">Por Qué Elegirnos</h2>
+        <div class="w-20 h-1 bg-primary mx-auto"></div>
+        <p class="text-gray-600 mt-6 text-lg">Nos dedicamos a brindar una experiencia estética excepcional, combinando
+          tecnología de vanguardia con un trato altamente personalizado.</p>
+      </div>
 
-<style>
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.animate-fadeIn {
-  animation: fadeIn 1.2s ease-out;
-}
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
+        <!-- Beneficio 1 -->
+        <div class="text-center group">
+          <div
+            class="w-20 h-20 mx-auto bg-primary/10 text-primary rounded-full flex items-center justify-center mb-6 transition-transform duration-500 group-hover:scale-110 group-hover:bg-primary group-hover:text-white">
+            <span class="material-symbols-outlined text-3xl">health_and_safety</span>
+          </div>
+          <h4 class="font-serif text-xl font-bold text-base-dark mb-3">Tecnología Avanzada</h4>
+          <p class="text-gray-600 text-sm">Equipos médicos de última generación para garantizar tratamientos seguros,
+            indoloros y altamente efectivos.</p>
+        </div>
 
-@media (max-width: 768px) {
-  #prevServ, #nextServ,
-  #prevMed, #nextMed {
-    display: none;
-  }
-}
+        <!-- Beneficio 2 -->
+        <div class="text-center group">
+          <div
+            class="w-20 h-20 mx-auto bg-primary/10 text-primary rounded-full flex items-center justify-center mb-6 transition-transform duration-500 group-hover:scale-110 group-hover:bg-primary group-hover:text-white">
+            <span class="material-symbols-outlined text-3xl">psychology</span>
+          </div>
+          <h4 class="font-serif text-xl font-bold text-base-dark mb-3">Atención Personalizada</h4>
+          <p class="text-gray-600 text-sm">Evaluamos cada tipo de piel y anatomía para diseñar un protocolo estético
+            único que se adapte a tus necesidades reales.</p>
+        </div>
 
-</style>
+        <!-- Beneficio 3 -->
+        <div class="text-center group">
+          <div
+            class="w-20 h-20 mx-auto bg-primary/10 text-primary rounded-full flex items-center justify-center mb-6 transition-transform duration-500 group-hover:scale-110 group-hover:bg-primary group-hover:text-white">
+            <span class="material-symbols-outlined text-3xl">workspace_premium</span>
+          </div>
+          <h4 class="font-serif text-xl font-bold text-base-dark mb-3">Resultados Naturales</h4>
+          <p class="text-gray-600 text-sm">Nuestra filosofía es realzar tu belleza innata. Buscamos resultados
+            armoniosos, sutiles y elegantes, huyendo de las exageraciones.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<script>
-  const menuToggle = document.getElementById('menuToggle');
-  const mobileMenu = document.getElementById('mobileMenu');
+  <!-- ======= PRODUCTOS DESTACADOS ======= -->
+  <section id="productos" class="py-24 bg-base-dark text-white">
+    <div class="container mx-auto px-4 md:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+        <div class="max-w-2xl">
+          <h3 class="text-primary font-semibold tracking-widest uppercase text-sm mb-3">Shop</h3>
+          <h2 class="font-serif text-4xl md:text-5xl font-bold mb-4">Productos</h2>
+          <p class="text-gray-400 text-lg">Nuestra selección exclusiva de productos para potenciar los resultados de la
+            clínica.</p>
+        </div>
+        <a href="medicamentos.html"
+          class="bg-primary hover:bg-primary-light text-white px-8 py-3 rounded-full text-sm font-bold transition-all duration-300">
+          Explorar Catálogo
+          <span class="material-symbols-outlined text-lg">arrow_forward</span>
+        </a>
+      </div>
 
-  menuToggle.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-  });
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Product 1 -->
+        <div class="group bg-[#2A2A2A] rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-2">
+          <div class="relative h-64 bg-white p-6 flex items-center justify-center">
+            <span class="absolute top-4 left-4 bg-base-dark text-white text-xs font-bold px-3 py-1 rounded-full">Más
+              Vendido</span>
+            <img src="img/medicamento1.jpeg"
+              onerror="this.src='https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=400&auto=format&fit=crop'"
+              class="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-110"
+              alt="Carzilasa">
+          </div>
+          <div class="p-6">
+            <p class="text-primary text-xs uppercase tracking-wider font-semibold mb-1">Regeneración</p>
+            <h4 class="font-serif text-xl font-bold mb-2">Carzilasa</h4>
+            <div class="flex justify-end items-center mt-6">
+              <a href="medicamentos.html" title="Ir al catálogo"
+                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors text-white">
+                <span class="material-symbols-outlined text-sm">shopping_bag</span>
+              </a>
+            </div>
+          </div>
+        </div>
 
-    document.getElementById("contactForm").addEventListener("submit", function (e) {
-    e.preventDefault();
+        <!-- Product 2 -->
+        <div class="group bg-[#2A2A2A] rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-2">
+          <div class="relative h-64 bg-white p-6 flex items-center justify-center">
+            <img src="img/Medicamento2.jpeg"
+              onerror="this.src='https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=400&auto=format&fit=crop'"
+              class="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-110"
+              alt="Placenta Cápsulas">
+          </div>
+          <div class="p-6">
+            <p class="text-primary text-xs uppercase tracking-wider font-semibold mb-1">Suplemento</p>
+            <h4 class="font-serif text-xl font-bold mb-2">Placenta en Cápsulas</h4>
+            <div class="flex justify-end items-center mt-6">
+              <a href="medicamentos.html" title="Ir al catálogo"
+                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors text-white">
+                <span class="material-symbols-outlined text-sm">shopping_bag</span>
+              </a>
+            </div>
+          </div>
+        </div>
 
-    const nombre = document.getElementById("name").value.trim();
-    const fecha = document.getElementById("date").value;
-    const mensaje = document.getElementById("message").value.trim();
+        <!-- Product 3 -->
+        <div class="group bg-[#2A2A2A] rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-2">
+          <div class="relative h-64 bg-white p-6 flex items-center justify-center">
+            <span
+              class="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">Recomendado</span>
+            <img src="img/medicamento14.jpeg"
+              onerror="this.src='https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=400&auto=format&fit=crop'"
+              class="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-110"
+              alt="Soilare">
+          </div>
+          <div class="p-6">
+            <p class="text-primary text-xs uppercase tracking-wider font-semibold mb-1">Protección</p>
+            <h4 class="font-serif text-xl font-bold mb-2">Soilare Filtro Solar</h4>
+            <div class="flex justify-end items-center mt-6">
+              <a href="medicamentos.html" title="Ir al catálogo"
+                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors text-white">
+                <span class="material-symbols-outlined text-sm">shopping_bag</span>
+              </a>
+            </div>
+          </div>
+        </div>
 
-    // ⚠️ Reemplaza este número con el tuyo en formato internacional (sin + ni espacios)
-    const telefono = "5545357150";
+        <!-- Product 4 -->
+        <div class="group bg-[#2A2A2A] rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-2">
+          <div class="relative h-64 bg-white p-6 flex items-center justify-center">
+            <span
+              class="absolute top-4 left-4 bg-white text-base-dark border border-gray-200 text-xs font-bold px-3 py-1 rounded-full">Nuevo</span>
+            <img src="img/medicamento18.jpeg"
+              onerror="this.src='https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=400&auto=format&fit=crop'"
+              class="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-110"
+              alt="Growth Lashes">
+          </div>
+          <div class="p-6">
+            <p class="text-primary text-xs uppercase tracking-wider font-semibold mb-1">Cuidado Específico</p>
+            <h4 class="font-serif text-xl font-bold mb-2">Growth Lashes</h4>
+            <div class="flex justify-end items-center mt-6">
+              <a href="medicamentos.html" title="Ir al catálogo"
+                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors text-white">
+                <span class="material-symbols-outlined text-sm">shopping_bag</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    // Formatear fecha (más legible)
-    const fechaFormateada = fecha
-      ? new Date(fecha).toLocaleString("es-MX", {
-          dateStyle: "long",
-          timeStyle: "short",
-        })
-      : "";
+  <!-- ======= TESTIMONIOS ======= -->
+  <section class="py-24 bg-primary/5">
+    <div class="container mx-auto px-4 md:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="font-serif text-4xl md:text-5xl font-bold text-base-dark mb-4">Experiencias</h2>
+        <p class="text-gray-600 text-lg">El bienestar y la satisfacción de nuestros pacientes son nuestra mejor carta de
+          presentación.</p>
+      </div>
 
-    const texto = `Hola, soy ${nombre}. Me gustaría agendar una cita el día ${fechaFormateada} hay disponibilidad?. Me gustaría un servicio de ${mensaje}`;
+      <div class="swiper testimonialsSwiper pb-12">
+        <div class="swiper-wrapper">
+          <!-- Review 1 -->
+          <div class="swiper-slide bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+            <div class="flex items-center gap-2 text-primary mb-6">
+              <span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+            </div>
+            <p class="text-gray-600 mb-8 italic">"Mi experiencia fue excepcional. El personal es muy amable y
+              profesional, y los tratamientos son de alta calidad. Recomiendo especialmente los tratamientos faciales.
+              Mi piel nunca se ha visto mejor."</p>
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-full bg-gray-200 overflow-hidden">
+                <img src="https://i.pravatar.cc/150?img=47" class="w-full h-full object-cover" alt="Sofía García">
+              </div>
+              <div>
+                <h5 class="font-bold text-base-dark">Sofía García</h5>
+                <p class="text-sm text-gray-500">Paciente desde 2025</p>
+              </div>
+            </div>
+          </div>
 
-    const url = `https://wa.me/${telefono}?text=${encodeURIComponent(texto)}`;
+          <!-- Review 2 -->
+          <div class="swiper-slide bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+            <div class="flex items-center gap-2 text-primary mb-6">
+              <span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+            </div>
+            <p class="text-gray-600 mb-8 italic">"Me realicé un tratamiento de plasma pen con Anaís y quedé muy
+              satisfecha con los resultados. Fue muy profesional, me explicó todo el proceso y el cambio en mi rostro se
+              nota desde la primera sesión."</p>
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-full bg-gray-200 overflow-hidden">
+                <img src="https://i.pravatar.cc/150?img=32" class="w-full h-full object-cover" alt="Valentina López">
+              </div>
+              <div>
+                <h5 class="font-bold text-base-dark">Valentina López</h5>
+                <p class="text-sm text-gray-500">Tratamiento Plasma Pen</p>
+              </div>
+            </div>
+          </div>
 
-    window.open(url, "_blank");
-  });
+          <!-- Review 3 -->
+          <div class="swiper-slide bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+            <div class="flex items-center gap-2 text-primary mb-6">
+              <span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 0;">star</span>
+            </div>
+            <p class="text-gray-600 mb-8 italic">"Quedé muy satisfecha con las ondas rusas. El tratamiento fue efectivo
+              y noté resultados desde las primeras sesiones. El consultorio transmite muchísima paz y lujo."</p>
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-full bg-gray-200 overflow-hidden">
+                <img src="https://i.pravatar.cc/150?img=12" class="w-full h-full object-cover" alt="Isabella R.">
+              </div>
+              <div>
+                <h5 class="font-bold text-base-dark">Isabella Rodríguez</h5>
+                <p class="text-sm text-gray-500">Tratamiento Corporal</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination !bottom-0"></div>
+      </div>
+    </div>
+  </section>
 
+  <!-- ======= FOOTER ======= -->
+  <footer id="contacto" class="bg-base-dark text-white pt-20 pb-10">
+    <div class="container mx-auto px-4 md:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
 
+        <!-- Columna 1: Brand -->
+        <div>
+          <div class="flex items-center gap-3 mb-6">
+            <img src="logo.png" alt="Logo" class="h-10 w-10">
+            <h3 class="font-serif text-2xl font-bold">Anais PH</h3>
+          </div>
+          <p class="text-gray-400 mb-6 line-clamp-3">Clínica estética especializada en tratamientos faciales y
+            corporales de vanguardia. Tu belleza es nuestra obra de arte.</p>
+          <div class="flex items-center gap-4">
+            <a href="#"
+              class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
+              <img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" class="w-5 h-5"
+                alt="Instagram">
+            </a>
+            <a href="#"
+              class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
+              <img src="https://img.icons8.com/ios-filled/50/ffffff/facebook-new.png" class="w-5 h-5"
+                alt="Facebook">
+            </a>
+          </div>
+        </div>
 
-</script>
+        <!-- Columna 2: Quick Links -->
+        <div>
+          <h4 class="font-serif text-lg font-bold mb-6">Enlaces Rápidos</h4>
+          <ul class="space-y-3">
+            <li><a href="index.html" class="text-gray-400 hover:text-primary transition-colors">Inicio</a></li>
+            <li><a href="servicios.html" class="text-gray-400 hover:text-primary transition-colors">Nuestros
+                Servicios</a></li>
+            <li><a href="medicamentos.html" class="text-gray-400 hover:text-primary transition-colors">Tienda
+                de Productos</a></li>
+            <li><a href="#noticias" class="text-gray-400 hover:text-primary transition-colors">Promociones</a></li>
+          </ul>
+        </div>
 
-</body></html>
+        <!-- Columna 3: Contacto -->
+        <div>
+          <h4 class="font-serif text-lg font-bold mb-6">Contacto</h4>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-primary mt-1">location_on</span>
+              <span class="text-gray-400">Mier y Pesado 347, Col del Valle Nte, CDMX, 03103</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary">phone</span>
+              <a href="tel:+525545357150" class="text-gray-400 hover:text-primary transition-colors">(+52)
+                55-45-35-71-50</a>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary">mail</span>
+              <a href="mailto:anaisph7@gmail.com"
+                class="text-gray-400 hover:text-primary transition-colors">anaisph7@gmail.com</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Columna 4: Horarios -->
+        <div>
+          <h4 class="font-serif text-lg font-bold mb-6">Horarios de Atención</h4>
+          <ul class="space-y-3">
+            <li class="flex justify-between text-gray-400">
+              <span>Lunes - Viernes</span>
+              <span>9:00 AM - 7:00 PM</span>
+            </li>
+            <li class="flex justify-between text-gray-400">
+              <span>Sábados</span>
+              <span>9:00 AM - 2:00 PM</span>
+            </li>
+            <li class="flex justify-between text-gray-400">
+              <span>Domingos</span>
+              <span class="text-primary font-medium">Cerrado</span>
+            </li>
+          </ul>
+          <a href="https://wa.me/525545357150?text=Hola,%20me%20gustar%C3%ADa%20agendar%20una%20cita" target="_blank"
+            class="mt-6 w-full flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white py-3 rounded-xl font-bold transition-colors">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp--v1.png" alt="WhatsApp" class="w-6 h-6">
+            Agendar por WhatsApp
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Mapa -->
+      <div class="h-64 w-full rounded-2xl overflow-hidden mb-12 opacity-80 hover:opacity-100 transition-opacity">
+        <iframe allowfullscreen="" class="h-full w-full" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.494882339784!2d-99.16766918459567!3d19.38937618690844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff374bc8b9d5%3A0x4d1b4d76b9d6e37!2sMier%20y%20Pesado%20347%2C%20c%C3%B3digo%202%2C%20Col%20del%20Valle%20Nte%2C%20Benito%20Ju%C3%A1rez%2C%2003103%20Del%20Valle%20Nte%2C%20CDMX%2C%20M%C3%A9xico!5e0!3m2!1ses-419!2sus!4v1620893934742!5m2!1ses-419!2sus"
+          style="border:0;"></iframe>
+      </div>
+
+      <!-- Copyright -->
+      <div class="border-t border-white/10 pt-8 text-center md:flex md:justify-between md:text-left">
+        <p class="text-gray-500 text-sm mb-4 md:mb-0">© 2026 Consultorio Anais PH. Todos los derechos reservados.</p>
+        <div class="flex justify-center gap-6 text-sm text-gray-500">
+          <a href="#" class="hover:text-primary transition-colors">Política de Privacidad</a>
+          <a href="#" class="hover:text-primary transition-colors">Términos y Condiciones</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script>
+    // Navbar Scroll Effect
+    const navbar = document.getElementById('navbar');
+    const navTitle = document.getElementById('nav-title');
+    const navLinks = [document.getElementById('nav-link-1'), document.getElementById('nav-link-2'), document.getElementById('nav-link-3')];
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.remove('nav-transparent', 'py-4');
+        navbar.classList.add('glass-nav', 'py-2');
+        navTitle.classList.remove('text-white');
+        navTitle.classList.add('text-base-dark');
+        mobileBtn.classList.remove('text-white');
+        mobileBtn.classList.add('text-base-dark');
+        navLinks.forEach(link => {
+          link.classList.remove('text-white');
+          link.classList.add('text-base-dark');
+        });
+      } else {
+        navbar.classList.add('nav-transparent', 'py-4');
+        navbar.classList.remove('glass-nav', 'py-2');
+        navTitle.classList.add('text-white');
+        navTitle.classList.remove('text-base-dark');
+        mobileBtn.classList.add('text-white');
+        mobileBtn.classList.remove('text-base-dark');
+        navLinks.forEach(link => {
+          link.classList.add('text-white');
+          link.classList.remove('text-base-dark');
+        });
+      }
+    });
+
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      mobileMenu.classList.toggle('flex');
+    });
+
+    // Hero Swiper Initialization
+    new Swiper('.heroSwiper', {
+      loop: true,
+      effect: 'fade',
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+
+    // Testimonials Swiper Initialization
+    new Swiper('.testimonialsSwiper', {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 3,
+        },
+      }
+    });
+
+    // Testimonials Swiper Initialization
+  </script>
+</body>
+
+</html>
